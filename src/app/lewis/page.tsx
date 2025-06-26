@@ -247,7 +247,7 @@ const techCategories = [
 const projectData = [
   {
     image: '/images/lewis/lewis_storybuilderpage1.png',
-    video: '/images/lewis/story_create_video.mp4',
+    video: undefined,
     title: '스토리 생성',
     description: 'Lewis의 핵심 기능인 스토리 생성 페이지입니다. 사용자가 원하는 스토리의 장르, 배경, 캐릭터 등을 설정하여 AI가 자동으로 스토리를 생성해줍니다.'
   },
@@ -324,7 +324,7 @@ export default function Lewis() {
         <VideoSection>
           <VideoSectionTitle>기능 사용 방법</VideoSectionTitle>
           <VideoGrid>
-            {projectData.map((item, index) => (
+            {projectData.filter(item => item.video).map((item, index) => (
               <VideoCard
                 key={index}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -339,7 +339,7 @@ export default function Lewis() {
                   </Video>
                 </VideoWrapper>
                 <VideoCardTitle>
-                  {index === 1 ? '스토리 챗' : item.title}
+                  {index === 0 ? '스토리 챗' : item.title}
                 </VideoCardTitle>
               </VideoCard>
             ))}
