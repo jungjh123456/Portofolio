@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import styled from 'styled-components';
-import { Container } from '@/components/common/Container';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { useState } from "react";
+import styled from "styled-components";
+import { Container } from "@/components/common/Container";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const ProjectPage = styled.div`
   min-height: 100vh;
@@ -174,8 +174,8 @@ const techCategories = [
       "React 18.2.0",
       "TypeScript 5.2.2",
       "Redux & Redux Toolkit",
-      "SWR"
-    ]
+      "SWR",
+    ],
   },
   {
     title: "UI/UX 라이브러리",
@@ -185,18 +185,12 @@ const techCategories = [
       "Styled Components",
       "Swiper",
       "React Slick",
-      "React Masonry CSS"
-    ]
+      "React Masonry CSS",
+    ],
   },
   {
     title: "상태 관리 & 데이터",
-    items: [
-      "Redux Toolkit",
-      "React Hook Form",
-      "Axios",
-      "SWR",
-      "React Query"
-    ]
+    items: ["Redux Toolkit", "React Hook Form", "Axios", "SWR", "React Query"],
   },
   {
     title: "다국어 & 국제화",
@@ -204,16 +198,12 @@ const techCategories = [
       "i18next",
       "react-i18next",
       "i18next-browser-languagedetector",
-      "flag-icons"
-    ]
+      "flag-icons",
+    ],
   },
   {
     title: "에디터 & 리치 텍스트",
-    items: [
-      "TipTap Editor",
-      "React Quill",
-      "DOMPurify"
-    ]
+    items: ["TipTap Editor", "React Quill", "DOMPurify"],
   },
   {
     title: "드래그 앤 드롭",
@@ -221,54 +211,48 @@ const techCategories = [
       "@dnd-kit/core",
       "@dnd-kit/sortable",
       "react-beautiful-dnd",
-      "react-dnd"
-    ]
+      "react-dnd",
+    ],
   },
   {
     title: "블록체인 & Web3",
-    items: [
-      "ethers.js",
-      "@web3modal/ethers",
-      "MetaMask Integration"
-    ]
+    items: ["ethers.js", "@web3modal/ethers", "MetaMask Integration"],
   },
   {
     title: "유틸리티 & 헬퍼",
-    items: [
-      "Lodash",
-      "Day.js",
-      "Cheerio",
-      "Express",
-      "JWT"
-    ]
-  }
+    items: ["Lodash", "Day.js", "Cheerio", "Express", "JWT"],
+  },
 ];
 
 const projectData = [
   {
-    image: '/images/lewis/lewis_storybuilderpage1.png',
-    video: '/images/lewis/story_create_video.mp4',
-    title: '스토리 생성',
-    description: 'Lewis의 핵심 기능인 스토리 생성 페이지입니다. 사용자가 원하는 스토리의 장르, 배경, 캐릭터 등을 설정하여 AI가 자동으로 스토리를 생성해줍니다.'
+    image: "/images/lewis/lewis_storybuilderpage1.png",
+    video: "/images/lewis/story_create_video.mp4",
+    title: "스토리 생성",
+    description:
+      "Lewis의 핵심 기능인 스토리 생성 페이지입니다. 사용자가 원하는 스토리의 장르, 배경, 캐릭터 등을 설정하여 AI가 자동으로 스토리를 생성해줍니다.",
   },
   {
-    image: '/images/lewis/lewis_createpage.png',
-    video: '/images/lewis/story_character_chat_video.mp4',
-    title: '스토리 생성 페이지',
-    description: '사용자가 생성한 스토리를 확인하고 관리할 수 있는 페이지입니다. 스토리의 진행 상황, 생성된 캐릭터, 그리고 스토리의 전체적인 흐름을 한눈에 볼 수 있습니다.'
+    image: "/images/lewis/lewis_createpage.png",
+    video: "/images/lewis/story_character_chat_video.mp4",
+    title: "스토리 생성 페이지",
+    description:
+      "사용자가 생성한 스토리를 확인하고 관리할 수 있는 페이지입니다. 스토리의 진행 상황, 생성된 캐릭터, 그리고 스토리의 전체적인 흐름을 한눈에 볼 수 있습니다.",
   },
   {
-    image: '/images/lewis/lewis_feedpage.png',
-    video: '/images/lewis/story_serial_video.mp4',
-    title: '스토리 피드',
-    description: '다른 사용자들이 생성한 스토리를 탐색하고 즐길 수 있는 피드 페이지입니다. 인기 있는 스토리와 최신 스토리를 확인할 수 있습니다.'
+    image: "/images/lewis/lewis_feedpage.png",
+    video: "/images/lewis/story_serial_video.mp4",
+    title: "스토리 피드",
+    description:
+      "다른 사용자들이 생성한 스토리를 탐색하고 즐길 수 있는 피드 페이지입니다. 인기 있는 스토리와 최신 스토리를 확인할 수 있습니다.",
   },
   {
-    image: '/images/lewis/lewis_metamaskpage_nft1.png',
-    video: '/images/lewis/story_nft_ip_video.mp4',
-    title: 'NFT & IP 관리',
-    description: '생성된 스토리를 NFT로 발행하고 지적재산권을 관리할 수 있는 기능입니다. MetaMask를 통한 안전한 거래와 소유권 증명이 가능합니다.'
-  }
+    image: "/images/lewis/lewis_metamaskpage_nft1.png",
+    video: "/images/lewis/story_nft_ip_video.mp4",
+    title: "NFT & IP 관리",
+    description:
+      "생성된 스토리를 NFT로 발행하고 지적재산권을 관리할 수 있는 기능입니다. MetaMask를 통한 안전한 거래와 소유권 증명이 가능합니다.",
+  },
 ];
 
 export default function Lewis() {
@@ -277,8 +261,9 @@ export default function Lewis() {
       <Container>
         <PageTitle>Lewis 프로젝트</PageTitle>
         <ProjectDescription>
-          Lewis는 AI 기반의 스토리텔링 플랫폼입니다.
-          사용자가 원하는 스토리를 생성하고, 캐릭터와 대화하며, NFT로 발행할 수 있는 혁신적인 서비스를 제공합니다.
+          Lewis는 AI 기반의 스토리텔링 플랫폼입니다. 사용자가 원하는 스토리를
+          생성하고, 캐릭터와 대화하며, NFT로 발행할 수 있는 혁신적인 서비스를
+          제공합니다.
         </ProjectDescription>
 
         <TechStackSection>
@@ -311,7 +296,7 @@ export default function Lewis() {
                 alt={item.title}
                 width={1200}
                 height={675}
-                style={{ width: '100%', height: 'auto' }}
+                style={{ width: "100%", height: "auto" }}
               />
               <ContentCaption>
                 <CaptionTitle>{item.title}</CaptionTitle>
@@ -321,7 +306,7 @@ export default function Lewis() {
           ))}
         </ContentContainer>
 
-        <VideoSection>
+        {/* <VideoSection>
           <VideoSectionTitle>기능 사용 방법</VideoSectionTitle>
           <VideoGrid>
             {projectData.map((item, index) => (
@@ -344,8 +329,8 @@ export default function Lewis() {
               </VideoCard>
             ))}
           </VideoGrid>
-        </VideoSection>
+        </VideoSection> */}
       </Container>
     </ProjectPage>
   );
-} 
+}
