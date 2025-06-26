@@ -1,1 +1,2 @@
+# Git LFS 설정 제거 - mp4 파일을 일반 파일로 처리
 *.mp4 filter=lfs diff=lfs merge=lfs -text

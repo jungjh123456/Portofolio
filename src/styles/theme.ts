@@ -1,10 +1,56 @@
 import { DefaultTheme } from 'styled-components';
 
+// DefaultTheme 인터페이스 확장
+declare module 'styled-components' {
+  export interface DefaultTheme {
+    colors: {
+      primary: string;
+      secondary: string;
+      background: string;
+      text: string;
+      accent: string;
+      light: string;
+      dark: string;
+      border: string;
+      success: string;
+      warning: string;
+      error: string;
+    };
+    fonts: {
+      body: string;
+      heading: string;
+    };
+    breakpoints: {
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+    };
+    spacing: {
+      xs: string;
+      sm: string;
+      md: string;
+      lg: string;
+      xl: string;
+    };
+    shadows: {
+      sm: string;
+      md: string;
+      lg: string;
+    };
+    borderRadius: {
+      sm: string;
+      md: string;
+      lg: string;
+    };
+  }
+}
+
 export const theme: DefaultTheme = {
   colors: {
     primary: '#4F46E5',
     secondary: '#6B7280',
-    background: '#FFFFFF',
+    background: '#FFFFFF', 
     text: '#111827',
     accent: '#8B5CF6',
     light: '#F3F4F6',
@@ -43,4 +89,4 @@ export const theme: DefaultTheme = {
   },
 } as const;
 
-export type Theme = typeof theme; 
+export type Theme = typeof theme;
