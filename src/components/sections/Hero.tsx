@@ -1,9 +1,9 @@
-'use client';
+"use client";
 
-import styled from 'styled-components';
-import { Container } from '../common/Container';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
+import styled from "styled-components";
+import { Container } from "../common/Container";
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const HeroSection = styled(motion.section)`
   min-height: 100vh;
@@ -27,7 +27,7 @@ const Title = styled(motion.h1)`
   margin-bottom: ${({ theme }) => theme.spacing.lg};
   font-weight: 800;
   line-height: 1.2;
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.md}) {
     font-size: 2.5rem;
   }
@@ -61,7 +61,7 @@ const Button = styled.button`
   box-shadow: ${({ theme }) => theme.shadows.md};
   border: none;
   cursor: pointer;
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: ${({ theme }) => theme.shadows.lg};
@@ -79,7 +79,10 @@ const BackgroundPattern = styled(motion.div)`
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: radial-gradient(${({ theme }) => theme.colors.light} 1px, transparent 1px);
+  background-image: radial-gradient(
+    ${({ theme }) => theme.colors.light} 1px,
+    transparent 1px
+  );
   background-size: 20px 20px;
   opacity: 0.5;
   z-index: 0;
@@ -88,21 +91,21 @@ const BackgroundPattern = styled(motion.div)`
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.6 }
+  transition: { duration: 0.6 },
 };
 
 const staggerChildren = {
   animate: {
     transition: {
-      staggerChildren: 0.2
-    }
-  }
+      staggerChildren: 0.2,
+    },
+  },
 };
 
 const scrollToProjects = () => {
-  const projectsSection = document.getElementById('projects');
+  const projectsSection = document.getElementById("projects");
   if (projectsSection) {
-    projectsSection.scrollIntoView({ behavior: 'smooth' });
+    projectsSection.scrollIntoView({ behavior: "smooth" });
   }
 };
 
@@ -121,14 +124,15 @@ export function Hero() {
       <Container>
         <Content variants={staggerChildren} initial="initial" animate="animate">
           <Title variants={fadeInUp}>
-            안녕하세요,<br />웹 개발자입니다
+            안녕하세요,
+            <br />웹 개발자입니다
           </Title>
           <Subtitle variants={fadeInUp}>
             창의적인 솔루션과 사용자 경험을 중요시하는 개발자입니다
           </Subtitle>
           <ButtonGroup variants={fadeInUp}>
             <Button onClick={scrollToProjects}>프로젝트 보기</Button>
-            <SecondaryButton onClick={() => {
+            {/* <SecondaryButton onClick={() => {
               const contactSection = document.getElementById('contact');
               if (contactSection) {
                 contactSection.scrollIntoView({ behavior: 'smooth' });
@@ -136,10 +140,10 @@ export function Hero() {
             }}>연락하기</SecondaryButton>
             <Link href="/coding-test" passHref>
               <Button>코딩 테스트 연습</Button>
-            </Link>
+            </Link> */}
           </ButtonGroup>
         </Content>
       </Container>
     </HeroSection>
   );
-} 
+}
